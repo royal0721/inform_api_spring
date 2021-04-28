@@ -21,11 +21,14 @@ public class AuthController {
     private JWTService jwtService;
 
     @PostMapping
-    public ResponseEntity<Map<String, String>> generateToken(@RequestBody AuthRequest request) {
+    public ResponseEntity<Map<String, Object>> generateToken(@RequestBody AuthRequest request) {
         String token = jwtService.generateToken(request);
         Map<String, String> response = Collections.singletonMap("token", token);
+        Map<String, Object> result_response = jwtService.parseToken(response.get("token"));
+        result_response.put("token",response.get("token"));
 
-        return ResponseEntity.ok(response);
+        //get user info
+        return ResponseEntity.ok(result_response);
     }
 
     @PostMapping("/parse")

@@ -32,8 +32,8 @@ public class User {
     @Column(name="role")
     private int role;
 
-    @Column(name="gender")
-    private int gender;
+    @Column(name="owner")
+    private String owner;
 
     @Column(name="organization")
     private String organization;
@@ -41,8 +41,8 @@ public class User {
     public User(){
     }
 
-    public User(String id, String first_name, String last_name, String password, String email, String phone_number, int role, int gender, String organization){
-
+    public User(String id, String first_name, String last_name, String password, String email, String phone_number, int role, String owner, String organization){
+        //前後端param串接修改
         this.id = id;
         this.first_name = first_name;
         this.last_name = last_name;
@@ -50,7 +50,7 @@ public class User {
         this.email = email;
         this.phone_number = phone_number;
         this.role = role;
-        this.gender = gender;
+        this.owner = owner;
         this.organization = organization;
 
     }
@@ -113,12 +113,12 @@ public class User {
         this.role = role;
     }
 
-    public int getGender() {
-        return gender;
+    public String getOwner() {
+        return owner;
     }
 
-    public void setGender(int gender) {
-        this.gender = gender;
+    public void setOwner(String owner) {
+        this.owner = owner;
     }
 
     public String getOrganization() {
@@ -138,7 +138,7 @@ public class User {
                 ", email='" + email + '\'' +
                 ", phone_number='" + phone_number + '\'' +
                 ", role=" + role +
-                ", gender=" + gender +
+                ", owner=" + owner +
                 ", organization='" + organization + '\'' +
                 '}';
     }
