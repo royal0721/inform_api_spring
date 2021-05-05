@@ -52,6 +52,10 @@ public class Inform {
 
     @Column(name="img_url")
     private String img_url;
+
+    @Column(name="latlong")
+    private String latlong;
+
     //針對img_url,必須做一個處理multiple images名稱的getter
 
     //default
@@ -60,7 +64,7 @@ public class Inform {
     }
 
     //setting
-    Inform(Integer id,String name,String type,int gender,String informer_id,Integer org_status,Timestamp captured_time,Timestamp progress_time,Integer now_status,String handler_id,String address,String img_url){
+    Inform(Integer id,String name,String type,int gender,String informer_id,Integer org_status,Timestamp captured_time,Timestamp progress_time,Integer now_status,String handler_id,String address,String img_url,String latlong){
         this.id = id;
         this.name = name;
         this.type = type;
@@ -73,6 +77,7 @@ public class Inform {
         this.handler_id = handler_id;
         this.address = address;
         this.img_url = img_url;
+        this.latlong = latlong;
     }
 
     public Integer getId() {
@@ -171,6 +176,10 @@ public class Inform {
         this.img_url = img_url;
     }
 
+    public String getLatlong(){ return latlong; }
+
+    public void setLatlong(String latlong){ this.latlong = latlong; }
+
     @Override
     public String toString() {
         return "Inform{" +
@@ -185,6 +194,7 @@ public class Inform {
                 ", now_status=" + now_status +
                 ", handler_id='" + handler_id + '\'' +
                 ", address='" + address + '\'' +
+                ", lan='" + latlong + '\'' +
                 '}';
     }
 }

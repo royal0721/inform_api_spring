@@ -39,7 +39,7 @@ public class LoginUser implements UserDetails {
 
     @Override
     public String getUsername() {
-        return getId();
+        return getId()+','+loginUser.getRole();
     }
 
     @Override
@@ -61,4 +61,6 @@ public class LoginUser implements UserDetails {
     public boolean isEnabled() {
         return true;
     }
+
+//    public Integer getRole(){ return loginUser.getRole(); }
 }
