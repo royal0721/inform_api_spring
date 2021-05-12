@@ -13,6 +13,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
+import java.util.Base64;
 import java.util.List;
 
 @RestController
@@ -30,23 +31,31 @@ public class InformController {
     }
 
     @PostMapping("/informs")
-    Inform newInform(@RequestBody Inform newInform, @RequestParam(value = "file") MultipartFile multipartFile) throws IOException{
+//    @RequestBody Inform newInform
+    Inform newInform(@RequestPart("user") Inform newInform, @RequestParam(value = "file") MultipartFile multipartFile) throws IOException{
 
         String file_name = StringUtils.cleanPath(multipartFile.getOriginalFilename());
-        newInform.setImg_url(file_name);
-        Inform savedInform = repository.save(newInform);
-        String uploadDir = "/animal_imgs/"+savedInform.getId();
-        Path uploadPath = Paths.get(uploadDir);
-
-        if (!Files.exists(uploadPath)){
-            Files.createDirectories(uploadPath);
-        }
-        try(InputStream inputstream = multipartFile.getInputStream()){
-            Path filePath = uploadPath.resolve(file_name);
-            Files.copy(inputstream,filePath, StandardCopyOption.REPLACE_EXISTING);
+        newInform.setImg_url(Base64.getEncoder().encodeToString(multipartFile.getBytes()));
+        System.out.println(Base64.getEncoder().encodeToString(multipartFile.getBytes()));
+        try{
+            newInform.setImg_url(Base64.getEncoder().encodeToString(multipartFile.getBytes()));
         }catch (IOException e){
             throw new IOException("Could not upload file "+file_name);
         }
+        Inform savedInform = repository.save(newInform);
+//        String uploadDir = "/animal_imgs/"+savedInform.getId();
+//        Path uploadPath = Paths.get(uploadDir);
+
+//        if (!Files.exists(uploadPath)){
+//            Files.createDirectories(uploadPath);
+//        }
+
+//        try(InputStream inputstream = multipartFile.getInputStream()){
+//            Path filePath = uploadPath.resolve(file_name);
+//            Files.copy(inputstream,filePath, StandardCopyOption.REPLACE_EXISTING);
+//        }catch (IOException e){
+//            throw new IOException("Could not upload file "+file_name);
+//        }
 
         return savedInform;
     }

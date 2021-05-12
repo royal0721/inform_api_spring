@@ -50,7 +50,13 @@ public class Inform {
     @Column(name="address")
     private String address;
 
-    @Column(name="img_url")
+    @Column(name="address2")
+    private String address2;
+
+    @Column(name="address3")
+    private String address3;
+
+    @Column(name="img_url",columnDefinition = "mediumblob")
     private String img_url;
 
     @Column(name="latlong")
@@ -64,7 +70,7 @@ public class Inform {
     }
 
     //setting
-    Inform(Integer id,String name,String type,int gender,String informer_id,Integer org_status,Timestamp captured_time,Timestamp progress_time,Integer now_status,String handler_id,String address,String img_url,String latlong){
+    Inform(Integer id,String name,String type,int gender,String informer_id,Integer org_status,Timestamp captured_time,Timestamp progress_time,Integer now_status,String handler_id,String address,String address2,String address3,String img_url,String latlong){
         this.id = id;
         this.name = name;
         this.type = type;
@@ -76,6 +82,8 @@ public class Inform {
         this.now_status = now_status;
         this.handler_id = handler_id;
         this.address = address;
+        this.address2 = address2;
+        this.address3 = address3;
         this.img_url = img_url;
         this.latlong = latlong;
     }
@@ -168,9 +176,18 @@ public class Inform {
         this.address = address;
     }
 
+    public String getAddress2() { return address2; }
+
+    public void setAddress2(String address2) { this.address2 = address2; }
+
+    public String getAddress3() { return address3; }
+
+    public void setAddress3(String address3) { this.address3 = address3; }
+
     public String getImg_url(){
         return img_url;
     }
+
 
     public void setImg_url(String img_url) {
         this.img_url = img_url;
@@ -193,7 +210,7 @@ public class Inform {
                 ", progress_time=" + progress_time +
                 ", now_status=" + now_status +
                 ", handler_id='" + handler_id + '\'' +
-                ", address='" + address + '\'' +
+                ", address='" + address + address2 + address3 + '\'' +
                 ", lan='" + latlong + '\'' +
                 '}';
     }
