@@ -1,13 +1,9 @@
-package com.animal.api.Entity;
+package com.animal.api.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import org.joda.time.DateTime;
-import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
-import java.sql.Time;
 import java.sql.Timestamp;
-import java.util.List;
 
 @Entity
 @Table(name="animal_inform")

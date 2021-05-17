@@ -1,4 +1,4 @@
-package com.animal.api.Entity;
+package com.animal.api.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;

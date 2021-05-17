@@ -1,6 +1,6 @@
-package com.animal.api.Auth;
+package com.animal.api.auth;
 
-import com.animal.api.Entity.User;
+import com.animal.api.entity.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

@@ -1,4 +1,4 @@
-package com.animal.api.Exception;
+package com.animal.api.exception;
 
 public class UserNotFoundException extends RuntimeException{
     public UserNotFoundException(String id) {

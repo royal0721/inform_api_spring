@@ -1,8 +1,8 @@
-package com.animal.api.Controller;
+package com.animal.api.controller;
 
-import com.animal.api.Entity.User;
-import com.animal.api.Exception.UserNotFoundException;
-import com.animal.api.Repository.UserRepository;
+import com.animal.api.entity.User;
+import com.animal.api.exception.UserNotFoundException;
+import com.animal.api.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;

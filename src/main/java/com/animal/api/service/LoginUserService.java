@@ -1,8 +1,9 @@
-package com.animal.api.Auth;
+package com.animal.api.service;
 
-import com.animal.api.Entity.User;
-import com.animal.api.Exception.UserNotFoundException;
-import com.animal.api.Repository.UserRepository;
+import com.animal.api.auth.LoginUser;
+import com.animal.api.entity.User;
+import com.animal.api.exception.UserNotFoundException;
+import com.animal.api.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

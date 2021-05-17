@@ -1,6 +1,5 @@
-package com.animal.api.Exception;
+package com.animal.api.exception;
 
-import com.animal.api.Exception.InformNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;

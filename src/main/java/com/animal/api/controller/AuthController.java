@@ -1,7 +1,7 @@
-package com.animal.api.Controller;
+package com.animal.api.controller;
 
-import com.animal.api.Auth.AuthRequest;
-import com.animal.api.Auth.JWTService;
+import com.animal.api.auth.AuthRequest;
+import com.animal.api.service.JWTService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;

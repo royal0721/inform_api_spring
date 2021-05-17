@@ -1,7 +1,7 @@
-package com.animal.api.Auth;
+package com.animal.api.service;
 
 
-import com.animal.api.Auth.AuthRequest;
+import com.animal.api.auth.AuthRequest;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.JwtParser;
 import io.jsonwebtoken.Jwts;

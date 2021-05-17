@@ -1,4 +1,4 @@
-package com.animal.api.Auth;
+package com.animal.api.auth;
 
 public class AuthRequest {
     private String username;

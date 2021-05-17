@@ -1,6 +1,6 @@
-package com.animal.api.Auth;
+package com.animal.api.auth;
 
-import com.animal.api.Auth.LoginUserService;
+import com.animal.api.service.LoginUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.BadCredentialsException;

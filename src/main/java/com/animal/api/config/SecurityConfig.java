@@ -1,4 +1,4 @@
-package com.animal.api.Config;
+package com.animal.api.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
